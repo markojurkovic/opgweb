@@ -1,4 +1,7 @@
-.container {
-  display: flex;
-  padding: 2%;
+#root {
+  font-size: 100%;
+}
+
+body {
+  font-size: 100%;
 }
