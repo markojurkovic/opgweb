@@ -1,34 +1,36 @@
-#navItems {
-  padding: 0 2rem;
+#navbar {
+  background-image: url("../../assets/navbar-bg.png");
   display: flex;
   justify-content: center;
-  align-items: center;
-  list-style: none;
+  align-items: stretch;
+  padding: 0 2rem;
+  border-bottom: 1px solid black;
 }
 
 #logoMenuContainer {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding-bottom: 2px;
-  margin-left: 4vw;
 }
 
-#navbar {
-  background-image: url("../../assets/navbar-bg.png");
+#navItems {
   display: flex;
   justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin-left: auto;
+  flex-grow: 0.1;
 }
 
 .navItem {
   font-size: 2rem;
   text-align: center;
+  align-items: stretch;
   font-family: "Indie Flower", sans-serif;
   color: #b5e2fa;
   padding: 0.5vw 2vw;
   border-bottom: 2px solid transparent;
-  flex-grow: 0.1;
-  overflow: hidden;
-  white-space: nowrap;
 }
 
 #fbItem {
@@ -58,25 +60,31 @@
   display: none;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   #logoMenuContainer {
     justify-content: space-between;
   }
 
   #opg-logo {
-    max-height: 200px;
+    max-height: 4rem;
   }
+
   #hamburgerImage {
     display: flex;
   }
+
   #navbar {
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
+    padding: 2rem;
   }
 
   #navItems {
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
   }
 
   .navItem {

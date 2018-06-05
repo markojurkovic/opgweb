@@ -29,7 +29,7 @@ class Navigation extends Component {
           <li className="navItem" id="navKontakt">
             Kontakt
           </li>
-          <li className="navItem" id="fbItem">
+          <li id="fbItem">
             <a
               href="https://www.facebook.com/opgmarica/"
               target="blank"
