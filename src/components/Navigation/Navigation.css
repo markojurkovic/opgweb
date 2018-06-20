@@ -1,5 +1,19 @@
+a {
+  text-decoration: none;
+  margin: 0.3rem 1.5vw 0 1.5vw;
+}
+
+button {
+  background: transparent;
+  border: none;
+}
+
+button:focus {
+  outline: none;
+}
+
 #navbar {
-  background-image: url("../../assets/navbar-bg.png");
+  background-color: #243a2e;
   display: flex;
   justify-content: center;
   align-items: stretch;
@@ -20,7 +34,8 @@
   align-items: center;
   list-style: none;
   margin-left: auto;
-  flex-grow: 0.1;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .navItem {
@@ -28,19 +43,18 @@
   text-align: center;
   align-items: stretch;
   font-family: "Indie Flower", sans-serif;
-  color: #b5e2fa;
-  padding: 0.5vw 2vw;
+  color: #d6f49d;
   border-bottom: 2px solid transparent;
 }
 
 #fbItem {
   margin-left: auto;
-  padding-bottom: 2px;
+  padding-left: 1rem;
 }
 
 .navItem:hover {
-  border-bottom-color: #eddea4;
-  color: #eddea4;
+  border-bottom-color: #ead637;
+  color: #ead637;
 }
 
 #fbItem:hover {
@@ -60,7 +74,7 @@
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 770px) {
   #logoMenuContainer {
     justify-content: space-between;
   }
@@ -84,7 +98,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: auto;
+    margin: 1rem auto 0 auto;
+    padding: 0;
+    display: none;
   }
 
   .navItem {
@@ -93,7 +109,6 @@
 
   .navItem:hover {
     border-bottom-color: transparent;
-    color: #eddea4;
   }
 
   #fb-logo {
