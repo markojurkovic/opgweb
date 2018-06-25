@@ -9,21 +9,43 @@ import HamburgerHover from "../../assets/hamburger-hover.png";
 class Navigation extends Component {
   toggleMenu = () => {
     let nav = document.getElementById("navItems");
-    nav.style.display =
-      nav.style.display === "flex" ? "none" : "flex";
+    if (nav.style.maxHeight === "0px" || !nav.style.maxHeight) {
+      nav.style.maxHeight = "800px";
+    } else {
+      nav.style.maxHeight = "0px";
+    }
+
+    let navItems = document.getElementsByClassName("navItem");
+    for (let i = 0; i < navItems.length; i++) {
+      navItems.item(i).style.visibility =
+        navItems.item(i).style.visibility === "visible" ? "hidden" : "visible";
+    }
   };
 
   toggleHamburgerColor = e => {
     e.currentTarget.src =
-      e.currentTarget.src == Hamburger ? HamburgerHover : Hamburger;
+      e.currentTarget.src === Hamburger ? HamburgerHover : Hamburger;
   };
 
-  handleWidthChange = () => {
-    document.getElementById("navItems").style.display = "flex";
+  handleWidthChange = e => {
+    let nav = document.getElementById("navItems");
+    let navItems = document.getElementsByClassName("navItem");
+    if (e.matches) {
+      nav.style.maxHeight = "800px";
+      for (let i = 0; i < navItems.length; i++) {
+        navItems.item(i).style.visibility = "visible";
+      }
+    } else {
+      nav.style.maxHeight = "0px";
+      for (let i = 0; i < navItems.length; i++) {
+        navItems.item(i).style.visibility = "hidden";
+      }
+      document.getElementById("hamburgerImage").src = Hamburger;
+    }
   };
 
   componentDidMount = () => {
-    let mediaQuery = window.matchMedia("(max-width: 770px");
+    let mediaQuery = window.matchMedia("(min-width: 770px");
     mediaQuery.addListener(this.handleWidthChange);
   };
 
@@ -32,57 +54,47 @@ class Navigation extends Component {
       <nav id="navbar">
         <div id="logoMenuContainer">
           <img id="opg-logo" src={OPGLogo} alt="OPG logo" />
+
           <button>
             <img
               id="hamburgerImage"
               alt="Navigation menu"
               src={Hamburger}
-              onMouseEnter={this.toggleHamburgerColor}
-              onMouseLeave={this.toggleHamburgerColor}
-              onTouchStart={this.toggleHamburgerColor}
-              onClick={this.toggleMenu}
+              onClick={e => {
+                this.toggleMenu(e);
+                this.toggleHamburgerColor(e);
+              }}
             />
           </button>
         </div>
         <ul id="navItems">
-          <a href="#">
-            <li className="navItem" id="navNovosti">
-              Novosti
-            </li>
-          </a>
-          <a href="#">
-            <li className="navItem" id="navBiljke">
-              Biljke
-            </li>
-          </a>
-          <a href="#">
-            <li className="navItem" id="navProizvodi">
-              Proizvodi
-            </li>
-          </a>
-          <a href="#">
-            <li className="navItem" id="navOopgu">
-              O OPG-u
-            </li>
-          </a>
-          <a href="#">
-            <li className="navItem" id="navKontakt">
-              Kontakt
-            </li>
-          </a>
+          <li className="navItem" id="navNovosti">
+            <a href="#">Novosti</a>
+          </li>
+          <li className="navItem" id="navBiljke">
+            <a href="#">Biljke</a>
+          </li>
+          <li className="navItem" id="navProizvodi">
+            <a href="#">Proizvodi</a>
+          </li>
+          <li className="navItem" id="navOopgu">
+            <a href="#">O OPG-u</a>
+          </li>
+          <li className="navItem" id="navKontakt">
+            <a href="#">Kontakt</a>
+          </li>
           <li id="fbItem">
-            <a
-              href="https://www.facebook.com/opgmarica/"
-              target="blank"
-            >
-              <img
-                id="fb-logo"
-                alt="Facebook logo"
-                src={FBIcon}
-                onMouseEnter={e => (e.currentTarget.src = FBIconBW)}
-                onMouseLeave={e => (e.currentTarget.src = FBIcon)}
-              />
-            </a>
+            <div id="fbImageContainer">
+              <a href="https://www.facebook.com/opgmarica/" target="blank">
+                <img
+                  id="fb-logo"
+                  alt="Facebook logo"
+                  src={FBIcon}
+                  onMouseEnter={e => (e.currentTarget.src = FBIconBW)}
+                  onMouseLeave={e => (e.currentTarget.src = FBIcon)}
+                />
+              </a>
+            </div>
           </li>
         </ul>
       </nav>

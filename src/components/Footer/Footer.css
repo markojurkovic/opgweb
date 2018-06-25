@@ -1,0 +1,41 @@
+#footer {
+  background-color: #051e1b;
+  padding: 0;
+  margin: 0;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+#footerContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+#footerContainer > div {
+  padding: 0 7rem;
+}
+
+#footer p {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0.5rem 0rem;
+  color: #ffffff;
+}
+
+#footer h4 {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.footerContactMethod {
+  display: flex;
+  align-items: center;
+}
+
+.footerContactMethod p {
+  margin-left: 1rem;
+}
+
+.footerContactMethod img {
+  width: 16px;
+}

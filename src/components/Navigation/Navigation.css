@@ -6,6 +6,7 @@ a {
 button {
   background: transparent;
   border: none;
+  cursor: pointer;
 }
 
 button:focus {
@@ -13,24 +14,28 @@ button:focus {
 }
 
 #navbar {
-  background-color: #243a2e;
+  background-color: #051e1b;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: stretch;
   padding: 0 2rem;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #000000;
 }
 
 #logoMenuContainer {
   display: flex;
-  align-items: center;
-  justify-content: center;
   padding-bottom: 2px;
+  justify-content: center;
+  align-items: center;
+}
+
+#logoMenuContainer > button {
+  padding: 0;
 }
 
 #navItems {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   list-style: none;
   margin-left: auto;
@@ -39,20 +44,25 @@ button:focus {
 }
 
 .navItem {
+  border-bottom: 2px solid transparent;
+}
+
+.navItem a {
   font-size: 2rem;
   text-align: center;
   align-items: stretch;
   font-family: "Indie Flower", sans-serif;
-  color: #d6f49d;
+  color: #f2aa2e;
   border-bottom: 2px solid transparent;
+  width: fit-content;
+  white-space: nowrap;
 }
 
 #fbItem {
-  margin-left: auto;
-  padding-left: 1rem;
+  padding-bottom: 2px;
 }
 
-.navItem:hover {
+.navItem a:hover {
   border-bottom-color: #ead637;
   color: #ead637;
 }
@@ -63,7 +73,6 @@ button:focus {
 
 #fb-logo {
   max-height: 2rem;
-  margin-left: auto;
 }
 
 #opg-logo {
@@ -91,23 +100,28 @@ button:focus {
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
-    padding: 2rem;
+    padding: 1rem 2rem;
   }
 
   #navItems {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 1rem auto 0 auto;
+    margin: auto;
     padding: 0;
-    display: none;
+    max-height: 0;
+    transition: max-height 300ms;
   }
 
   .navItem {
+    visibility: hidden;
+  }
+
+  .navItem a {
     font-size: 3rem;
   }
 
-  .navItem:hover {
+  .navItem a:hover {
     border-bottom-color: transparent;
   }
 
