@@ -1,47 +1,41 @@
 import React, { Component } from "react";
 import "../../App.css";
 import "./Home.css";
-import HerbsJumbotronBg from "../../assets/marigold-edit.jpg";
-import TaglineJumbotronBg from "../../assets/lavender-jumbotron2-edit.jpg";
-import WelcomeJumbotronBg from "../../assets/meadow-crop.jpg";
 import Jumbotron from "../Jumbotron/Jumbotron";
-import Footer from "../Footer/Footer";
+import AOS from "aos";
+import WelcomeBgImg from "../../assets/meadow-crop.jpg";
+import ProductsBgImg from "../../assets/lavender-jumbotron2-edit.jpg";
+import { NavLink } from "react-router-dom";
 
 class Home extends Component {
+  componentDidMount = () => {
+    document.title = "OPG Marica - Dobrodošli";
+    AOS.init({
+      once: true,
+      duration: 800,
+      offset: 20
+    });
+  };
   render() {
     return (
       <div className="container">
-        <Jumbotron bgImg={WelcomeJumbotronBg}>
+        <Jumbotron bgImg={WelcomeBgImg} addClasses="homeJumbotron">
           <h1>Dobrodošli na OPG Marica</h1>
         </Jumbotron>
 
         <Jumbotron
-          bgImg={TaglineJumbotronBg}
+          addClasses="homeJumbotron"
+          bgImg={ProductsBgImg}
           linkId="proizvodiLink"
-          linkHoverColor="#F2BFEE"
+          linkHoverColor="#c790f1"
         >
           <h2>Snaga koja pospješuje ozdravljenje nalazi se u prirodi</h2>
           <div>
-            <a id="proizvodiLink" href="#">
-              Pogledaj proizvode
-            </a>
+            <NavLink to="/products" id="proizvodiLink" href="#">
+              Biljke i proizvodi
+            </NavLink>
           </div>
         </Jumbotron>
-
-        <Jumbotron
-          bgImg={HerbsJumbotronBg}
-          linkId="biljkeLink"
-          linkHoverColor="#997DF2"
-        >
-          <h2>Jeste li znali da je neven zapravo mali sat?</h2>
-          <div>
-            <a id="biljkeLink" href="#">
-              Više o biljkama
-            </a>
-          </div>
-        </Jumbotron>
-
-        <Footer />
       </div>
     );
   }

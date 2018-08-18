@@ -1,0 +1,60 @@
+.herbJumbotron {
+  min-height: 85vh;
+  justify-content: flex-start;
+}
+
+.herbJumbotron div {
+  padding: 0;
+}
+
+.herbJumbotron .herbName {
+  padding-top: 5rem;
+}
+
+.herbJumbotron div.herbReadMoreLink {
+  padding-bottom: 2rem;
+}
+
+h2,
+h3 {
+  color: #ffffff;
+  margin: 0;
+  font-weight: normal;
+}
+
+h3 {
+  margin-bottom: 6rem;
+}
+
+.herbName {
+  font-size: 6rem;
+  font-family: "Amatic SC", sans-serif;
+}
+
+.herbTagline {
+  font-family: "Dancing Script", sans-serif;
+  font-size: 3rem;
+}
+
+a {
+  font-size: 2rem;
+  font-family: "Source Sans Pro", sans-serif;
+  color: #ffffff;
+}
+
+@media (max-width: 980px) {
+  .herbJumbotron {
+    justify-content: center;
+    min-height: 70vh;
+  }
+
+  .herbJumbotron .herbName {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 770px) {
+  .herbTagline h3 {
+    padding-bottom: 4rem;
+  }
+}
