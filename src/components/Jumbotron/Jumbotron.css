@@ -6,7 +6,6 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  min-height: 100vh;
   margin: auto;
   background-size: cover;
   background-position: center;
@@ -15,29 +14,33 @@
 
 .jumbotron h1 {
   font-size: 5rem;
-  padding: 0 2rem;
-  margin-bottom: 15rem;
-  color: #ffffff;
-  font-family: "Roboto Slab", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .jumbotron h2 {
-  padding: 0rem 2rem;
   font-weight: normal;
-  color: #f9f7f3;
-  font-family: "Roboto Slab", sans-serif;
-  font-size: 5rem;
-}
-
-.jumbotron div,
-.jumbotron a {
-  color: #f9f7f3;
-  font-family: "Source Sans Pro", sans-serif;
-  text-shadow: 0px 1px;
-  padding: 5rem 0;
 }
 
 .jumbotron a {
-  padding: 0;
+  padding: 0.5rem;
   font-size: 2rem;
 }
+
+.jumbotron a:hover {
+  border: 2px solid;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 770px) {
+  .jumbotron a {
+    border-color: transparent;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* .jumbotron a::after {
+  padding-left: 0.5rem;
+  content: url("../../assets/arrow-white.png");
+} */

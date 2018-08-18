@@ -1,20 +1,16 @@
-import React, { Component } from "react";
+import React from "react";
 import "./App.css";
-import Home from "./components/Home/Home";
-import withNavigation from "./components/Navigation/withNavigation";
-import AOS from "aos";
 import "aos/dist/aos.css";
+import Navigation from "./components/Navigation/Navigation";
+import Content from "./components/Content";
+import Footer from "./components/Footer/Footer";
 
-class App extends Component {
-  componentDidMount = () => {
-    AOS.init({
-      duration: 2000
-    });
-  };
-  render() {
-    const HomeWithNavigation = withNavigation(Home);
-    return <HomeWithNavigation />;
-  }
-}
+const App = () => (
+  <div>
+    <Navigation />
+    <Content />
+    <Footer />
+  </div>
+);
 
 export default App;

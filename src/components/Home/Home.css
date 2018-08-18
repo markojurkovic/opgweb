@@ -2,6 +2,30 @@
   max-width: 100%;
 }
 
+.homeJumbotron {
+  min-height: 100vh;
+}
+
+.homeJumbotron div,
+.homeJumbotron a {
+  font-family: "Source Sans Pro", sans-serif;
+  color: #f9f7f3;
+  padding: 5rem 0;
+}
+
+.homeJumbotron h1 {
+  color: #ffffff;
+  padding: 0 2rem;
+  margin-bottom: 15rem;
+}
+
+.homeJumbotron h2 {
+  font-family: "Poppins", sans-serif;
+  color: #f9f7f3;
+  padding: 0rem 2rem;
+  font-size: 5rem;
+}
+
 @media (max-width: 500px) {
   html {
     font-size: 60%;

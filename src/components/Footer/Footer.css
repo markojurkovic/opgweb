@@ -1,41 +1,87 @@
 #footer {
-  background-color: #051e1b;
+  background-color: #020c0b;
   padding: 0;
   margin: 0;
   font-family: "Source Sans Pro", sans-serif;
 }
 
+#footerProducts,
+#footerContact {
+  min-width: 20%;
+}
+
 #footerContainer {
   display: flex;
+  padding-bottom: 1rem;
   justify-content: space-around;
 }
 
 #footerContainer > div {
-  padding: 0 7rem;
+  padding: 0 3rem;
 }
 
 #footer p {
   margin-top: 0;
   margin-bottom: 0;
-  padding: 0.5rem 0rem;
   color: #ffffff;
+  font-size: 1rem;
 }
 
 #footer h4 {
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: #ffffff;
+}
+
+#footer li,
+#footer ul {
+  font-size: 1rem;
+  color: #ffffff;
+  padding-left: 0;
+  list-style: none;
+  margin-bottom: 0.5rem;
 }
 
 .footerContactMethod {
   display: flex;
   align-items: center;
+  margin-bottom: 0.5rem;
 }
 
 .footerContactMethod p {
-  margin-left: 1rem;
+  margin-left: 0.7rem;
 }
 
 .footerContactMethod img {
   width: 16px;
+}
+
+@media (max-width: 980px) {
+  #footerContainer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #footerAbout,
+  #footerProducts,
+  #footerContact {
+    width: 80%;
+    text-align: center;
+  }
+
+  #footerContact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #footer p,
+  #footer li {
+    font-size: 1.2rem;
+  }
+
+  #footerContainer > div {
+    padding: 0 4rem;
+  }
 }

@@ -5,6 +5,7 @@ import OPGLogo from "../../assets/logo-s.png";
 import FBIconBW from "../../assets/F_icon_bw.png";
 import Hamburger from "../../assets/hamburger.png";
 import HamburgerHover from "../../assets/hamburger-hover.png";
+import { Link, NavLink } from "react-router-dom";
 
 class Navigation extends Component {
   toggleMenu = () => {
@@ -53,7 +54,9 @@ class Navigation extends Component {
     return (
       <nav id="navbar">
         <div id="logoMenuContainer">
-          <img id="opg-logo" src={OPGLogo} alt="OPG logo" />
+          <Link to="/">
+            <img id="opg-logo" src={OPGLogo} alt="OPG logo" />
+          </Link>
 
           <button>
             <img
@@ -68,14 +71,8 @@ class Navigation extends Component {
           </button>
         </div>
         <ul id="navItems">
-          <li className="navItem" id="navNovosti">
-            <a href="#">Novosti</a>
-          </li>
-          <li className="navItem" id="navBiljke">
-            <a href="#">Biljke</a>
-          </li>
           <li className="navItem" id="navProizvodi">
-            <a href="#">Proizvodi</a>
+            <NavLink to="/products">Proizvodi</NavLink>
           </li>
           <li className="navItem" id="navOopgu">
             <a href="#">O OPG-u</a>

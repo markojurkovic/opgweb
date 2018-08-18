@@ -1,0 +1,39 @@
+.herbDescriptionJumbotron {
+  min-height: 70vh;
+  justify-content: flex-start;
+}
+
+.herbProducts {
+  padding: 5rem 3rem;
+}
+
+p.herbDescriptionText {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  color: #ffffff;
+  align-self: flex-start;
+  margin: 0 7rem;
+  text-align: justify;
+  font-family: "Source Sans Pro", sans-serif;
+  padding: 1rem;
+}
+
+h4.herbDescriptionName {
+  font-size: 7rem;
+  margin: 1rem;
+  color: #ffffff;
+  font-family: "Amatic SC", sans-serif;
+}
+
+.product {
+  margin: 2rem;
+  padding: 0.5rem 2rem;
+  border-radius: 40px;
+  border-color: orange;
+  border-width: 2px;
+  border-style: solid;
+  font-family: "Source Sans Pro", sans-serif;
+  color: #ffffff;
+  font-size: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.2);
+}
