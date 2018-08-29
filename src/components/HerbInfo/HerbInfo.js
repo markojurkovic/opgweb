@@ -1,13 +1,3 @@
-/* PROPS:
-
-descriptionBgImg - background image for the main herb description section of the component
-
-herbName - name of the herb
-
-herbDescription - description text for the herb
-
-*/
-
 import React, { Component } from "react";
 import "./HerbInfo.css";
 import AOS from "aos";
@@ -15,36 +5,37 @@ import AOS from "aos";
 class HerbInfo extends Component {
   constructor(props) {
     super(props);
-    this.herb = this.props.match.params.herbName;
     this.state = {
-      herbName: null,
-      bgImgUrl: null,
+      herbName: "",
+      bgImgUrl: "",
       products: [""],
-      herbDescription: null
+      herbDescription: "",
+      requestedHerb: this.props.match.params.herbName
     };
   }
 
   componentDidMount = () => {
-    // Load data
-    let herbName = this.herb.charAt(0).toUpperCase() + this.herb.substr(1);
-    let herbDescription =
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur facere earum aliquid, sit excepturi quos. Expedita optio fugit ipsam quae harum saepe nisi! Nam provident, eaque ullam eos commodi rerum!";
-    let products = ["Krema", "Tinktura", "Etcetera"];
+    // Fetch data
+    let fetchUrl = `/herbInfo/${this.state.requestedHerb}`;
+    fetch(fetchUrl)
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          herbName: data.herbName,
+          products: data.products,
+          herbDescription: data.herbDescription,
+          bgImgUrl: data.imgUrl
+        });
+        this.updateComponent();
+      });
+  };
 
-    this.imgName = "marigold-edit.jpg";
-    this.bgImgUrl = "/images/marigold-edit.jpg";
-
-    document.title = "OPG Marica - " + herbName;
+  updateComponent = function() {
+    document.title = "OPG Marica - " + this.state.herbName;
     window.scrollTo(0, 0);
     AOS.init({
       once: true,
       duration: 800
-    });
-
-    this.setState({
-      herbName: herbName,
-      products: products,
-      herbDescription: herbDescription
     });
   };
 
@@ -55,7 +46,7 @@ class HerbInfo extends Component {
           className="jumbotron herbDescriptionJumbotron"
           style={{
             ...this.props.style,
-            backgroundImage: `url(${this.bgImgUrl})`
+            backgroundImage: `url(${this.state.bgImgUrl})`
           }}
         >
           <h4 className="herbDescriptionName">{this.state.herbName}</h4>

@@ -1,16 +1,3 @@
-/*
-PROPS:
-
-additionalClasses - classes to be added to returned jumbotron in addition to 'jumbotron'
-
-bgImg - background image
-
-linkHoverColor - hover color for link inside the jumbotron
-
-linkId - id of the link, necessary for styling link color
-
-*/
-
 import React, { Component } from "react";
 import "./Jumbotron.css";
 import "../../../node_modules/aos/dist/aos";
