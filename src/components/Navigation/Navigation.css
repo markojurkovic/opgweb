@@ -53,7 +53,6 @@ button:focus {
   font-family: "Indie Flower", sans-serif;
   color: #f2aa2e;
   border-bottom: 2px solid transparent;
-  width: fit-content;
   white-space: nowrap;
 }
 

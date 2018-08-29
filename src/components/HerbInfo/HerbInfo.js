@@ -16,7 +16,7 @@ class HerbInfo extends Component {
 
   componentDidMount = () => {
     // Fetch data
-    let fetchUrl = `/getHerbInfo/${this.state.requestedHerb}`;
+    let fetchUrl = `/herbInfo/${this.state.requestedHerb}`;
     fetch(fetchUrl)
       .then(response => response.json())
       .then(data => {

@@ -3,8 +3,9 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+var mongoose = require("mongoose");
 
-var indexRouter = require("./routes/index");
+var herbsRouter = require("./routes/herbs");
 var usersRouter = require("./routes/users");
 
 var app = express();
@@ -19,8 +20,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/", indexRouter);
+app.use("/", herbsRouter);
 app.use("/users", usersRouter);
+
+const db = mongoose
+  .connect("mongodb://localhost/opgmarica")
+  .then(() => {
+    console.info("Successfully connected to the MongoDB database!");
+  })
+  .catch(err => {
+    console.log(err);
+  });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
